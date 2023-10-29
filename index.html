@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Course work</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="./script.js"></script>    
+    </head>
+    <body>
+        <header class="navigation">
+            <div class="navidation_tab-switch tab1">
+                Tab 1
+            </div>
+            <div class="navidation_tab-switch tab2">
+                Tab 2
+            </div>
+        </header>
+        <main>
+            <section class="first-tab">
+                <div class="choose-date-period">
+                    <form id="chooseDateform">
+                        <div class="choose-dates">
+                            <label for="startDate">Enter start date</label>
+                            <div class="start-date">
+                                <input type="date" id="startDate" name="startDate">
+                            </div>
+                            <label for="endDate">Enter end date</label>
+                            <div class="end-date">
+                                <input type="date" id="endDate" name="endDate" disabled>
+                            </div>
+                        </div>
+                        <div class="choose-date-period">
+                            <lable for="datePeriod">Choose date period</lable>
+                            <button type="button" id="weekPeriod">Week</button>
+                            <button type="button" id="monthPeriod">Month</button>
+                        </div>
+                        <div class="choose-days-option">
+                            <lable for="daysOption">Choose days option</lable>
+                            <select name="daysOption" id="daysOption">
+                                <option value="allDays">all days</option>
+                                <option value="workingDays">working days</option>
+                                <option value="weekends">weekends</option>
+                            </select>
+                        </div>
+                        <div class="choose-period-option">
+                            <lable for="periodOption">Choose period option. Calculate the </lable>
+                            <select name="periodOption" id="periodOption">
+                                <option value="days">days number</option>
+                                <option value="hours">hours number</option>
+                                <option value="minutes">minutes number</option>
+                                <option value="seconds">seconds number</option>
+                            </select>                        
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <div class="date-actual-result">
+                        Result: <span id="actualResult"></span>
+                    </div>               
+                </div>
+                <div class="history-data">
+                    <table class="history-data__table">
+                        <thead>
+                            <tr>
+                                <th>Start date</th>
+                                <th>End date</th>
+                                <th>Result</th>
+                            </tr>                        
+                        </thead>
+                        <tbody id="historyTableData"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="second-tab disabled">
+                <div class="holiday-options">
+                    <label for="countriesList">Choose country</label>
+                    <div class="country-list">
+                        <select name="countriesList" id="countriesList">
+                            <option value="" selected disabled>---Choose the country---</option>
+                        </select>
+                    </div>
+                    <label for="yearsList">Choose year</label>
+                    <div class="year-list">
+                        <select name="yearsList" id="yearsList"></select>
+                    </div>
+                </div>
+                <div class="holiday-list">
+                    <table class="holiday-list_table disabled">
+                        <thead>
+                            <tr>
+                                <th class="holiday-list_date-sort">Date<span class="sort-up-icon">&uarr;</span><span class="sort-down-icon">&darr;</span></th>
+                                <th>Holiday name</th>
+                            </tr>  
+                        </thead>
+                        <tbody class="holiday-list_table-body">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>

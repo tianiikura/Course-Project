@@ -1,0 +1,42 @@
+.navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.navidation_tab-switch {
+    font-size: 20px;
+}
+.navidation_tab-switch:hover{
+    cursor: pointer;
+    scale: 25px;
+}
+.navidation_tab-switch:active{
+    transform: translateY(4px);
+    color: blue;
+}
+
+.disabled {
+    display: none;
+}
+
+.holiday-list_date-sort:hover{
+    cursor: pointer;
+    scale: 25px;
+}
+
+.holiday-list_date-sort:active{
+    transform: translateY(4px);
+    color: blue;
+}
+
+.sort-down-icon {
+    display: none;
+}
+
+.sorting-down .sort-down-icon {
+    display: inline;
+}
+
+.sorting-down .sort-up-icon {
+    display: none;
+}
