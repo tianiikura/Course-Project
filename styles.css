@@ -40,3 +40,14 @@
 .sorting-down .sort-up-icon {
     display: none;
 }
+
+.alert {
+    padding: 16px;
+    margin: 8px 0;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }

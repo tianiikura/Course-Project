@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
-        <script src="./script.js"></script>    
+        <script type="module" src="./app/main.js"></script>    
     </head>
     <body>
         <header class="navigation">
@@ -23,11 +23,11 @@
                         <div class="choose-dates">
                             <label for="startDate">Enter start date</label>
                             <div class="start-date">
-                                <input type="date" id="startDate" name="startDate">
+                                <input type="date" id="startDate" name="startDate" required>
                             </div>
                             <label for="endDate">Enter end date</label>
                             <div class="end-date">
-                                <input type="date" id="endDate" name="endDate" disabled>
+                                <input type="date" id="endDate" name="endDate" disabled required>
                             </div>
                         </div>
                         <div class="choose-date-period">
