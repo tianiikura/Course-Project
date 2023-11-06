@@ -1,6 +1,7 @@
 "use strict";
 import {datesHistory, addRecordToStorage} from "./datesHistoryStorage.js";
 import {durationBetweenDates} from "./dateIntervalCalculate.js";
+import { addMonth, addWeek } from "./dateUtils.js";
 
 export function runDateCalculting () {
     const dateForm = document.getElementById("chooseDateform");
@@ -25,10 +26,10 @@ export function runDateCalculting () {
     function chooseDatePeriod (event) {
         const dateValue = new Date(startDateInput.value);   
         if (event.target === weekPeriodButton) {
-            dateValue.setDate(dateValue.getDate() + 7);
+            addWeek(dateValue);
         }
         if (event.target === monthPeriodButton) {
-            dateValue.setMonth(dateValue.getMonth() + 1);
+            addMonth(dateValue);
         }
         endDateInput.valueAsDate = dateValue;
         
@@ -55,8 +56,6 @@ export function runDateCalculting () {
 
         addRecordToStorage(record);
         renderTable();
-
-        console.log(startDateValue, endDateValue, periodOptionValue, result);
     }
 
     dateForm.addEventListener("submit", calculateTime);

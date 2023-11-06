@@ -1,4 +1,6 @@
 "use strict";
+import {isWorkingDay, addDay} from "./dateUtils.js";
+
 
 export function durationBetweenDates (startDate, endDate, dimension, daysOption) {
     let startDateTime = new Date(startDate);
@@ -45,9 +47,8 @@ function getAllDays (startDate, endDate) {
 };
 function getWorkingDays (startDate, endDate) {
     let differenceInDays = 0;
-    for (let c = new Date(startDate); c < endDate; c.setDate(c.getDate() + 1)) {
-        let isWeekend = c.getDay() === 6 || c.getDay() === 0;
-        if (isWeekend === false) {
+    for (let c = new Date(startDate); c < endDate; addDay(c)) {
+        if (isWorkingDay(c)) {
             differenceInDays++;
         }
     };

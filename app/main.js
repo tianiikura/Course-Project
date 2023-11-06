@@ -1,5 +1,5 @@
 "use strict";
-import {runDateCalculting} from "./datesCalculating.js";
+import {runDateCalculting} from "./datesCalculatingTab.js";
 import {initTabs} from "./tabs.js";
 
 function runApp () {
