@@ -3,6 +3,10 @@ import {loadCountries, loadHolidays} from "./calendarificApi.js";
 import {showAlert} from "./alert.js";
 import {sortByProperty} from "./sortByProperty.js";
 
+const INITIAL_START_YEAR = 2001;
+const INITIAL_END_YEAR = 2050;
+
+
 let isHolidayTabPrepared = false;
 export function initHolidayTab () {
     if (isHolidayTabPrepared === true) {
@@ -33,7 +37,7 @@ export function initHolidayTab () {
 
     function createYearList() {
         const currentYear = (new Date).getFullYear();
-        for (let year = 2001; year < 2050; year ++) {
+        for (let year = INITIAL_START_YEAR; year < INITIAL_END_YEAR; year ++) {
             let yearOption = document.createElement("option");
             yearOption.textContent = year;
             yearOption.value = year;
@@ -42,7 +46,7 @@ export function initHolidayTab () {
         yearsList.value = currentYear;
     }
     
-    async function renderHolidayList() {
+    async function renderHolidayTable() {
         try{
             let selectedCountry = countriesList.value; 
             let selectedYear = yearsList.value;
@@ -82,16 +86,16 @@ export function initHolidayTab () {
         isSortingDown = !isSortingDown;
         dateSort.classList.toggle("sorting-down", isSortingDown);
 
-        renderHolidayList();
+        renderHolidayTable();
     }
 
     createYearList();
     createCountryList();
-    renderHolidayList();
+    renderHolidayTable();
     toggleDateSort();
 
-    countriesList.addEventListener("change", renderHolidayList);
-    yearsList.addEventListener("change", renderHolidayList);
+    countriesList.addEventListener("change", renderHolidayTable);
+    yearsList.addEventListener("change", renderHolidayTable);
     dateSort.addEventListener("click", toggleDateSort);
 
 }
