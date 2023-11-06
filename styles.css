@@ -1,22 +1,32 @@
+body {
+    color: #616163;
+    font-size: 22px;    
+}
+
 .navigation {
     display: flex;
-    gap: 10px;
+    flex-flow: row wrap;
+    padding-inline: 20px;
+    gap: 40px;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: #01AAA7;
+    top: 10px;
+    height: 40px;  
+    margin-bottom: 20px;
 }
 
 .navidation_tab-switch {
     font-size: 20px;
+    color: #FFFFFF;
 }
 .navidation_tab-switch:hover{
     cursor: pointer;
-    scale: 25px;
+    scale: 125%;
 }
 .navidation_tab-switch:active{
     transform: translateY(4px);
-    color: blue;
-}
-
-.disabled {
-    display: none;
+    color: #BB3D96;
 }
 
 .holiday-list_date-sort:hover{
@@ -25,8 +35,8 @@
 }
 
 .holiday-list_date-sort:active{
-    transform: translateY(4px);
-    color: blue;
+    transform: translateY(2px);
+    color: #BB3D96;
 }
 
 .sort-down-icon {
@@ -45,9 +55,65 @@
     padding: 16px;
     margin: 8px 0;
     font-size: 16px;
-    color: white;
-    background-color: red;
+    color: #FFFFFF;
+    background-color: #BB3D96;
     position: absolute;
     top: 10px;
     right: 10px;
   }
+
+.first-tab, .second-tab {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border: 1px solid rgba(1, 170, 167, 0.721);
+    border-radius: 20px;
+    padding: 40px 15px;
+}
+
+.disabled {
+    display: none;
+}
+
+.choose-dates, .choose-date-interval {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.choose-date-period * {
+    margin-bottom: 10px;
+}
+
+#startDate, #endDate {
+    height: 25px;
+    color: #616163;
+    border: #616163 solid 1px;
+    border-radius: 10px;
+    padding-inline: 5px;
+    box-sizing: border-box;
+}
+
+#startDate:focus, #endDate:focus {
+    color: #BB3D96;
+}
+
+#weekPeriod, #monthPeriod {
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #01AAA7;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+#weekPeriod:hover, #monthPeriod:hover {
+    color: #FFFFFF;
+    background-color: #BB3D96;
+    cursor: pointer;
+}
+
+#weekPeriod:active, #monthPeriod:active {
+    transform: translateY(2px);
+}
