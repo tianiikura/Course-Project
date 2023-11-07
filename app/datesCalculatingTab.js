@@ -1,7 +1,7 @@
 import {datesHistory, addRecordToStorage} from "./datesHistoryStorage.js";
 import { addMonth, addWeek, durationBetweenDates } from "./dateUtils.js";
 
-export function runDateCalculting () {
+export function initCalculatingTab () {
     const dateForm = document.getElementById("chooseDateform");
     const startDateInput = document.getElementById("startDate");
     const endDateInput = document.getElementById("endDate");
@@ -58,11 +58,15 @@ export function runDateCalculting () {
     dateForm.addEventListener("submit", calculateTime);
     
     enableEndDateInput();
-    renderTable();
+    if (datesHistory.length !== 0) {
+        renderTable();
+    };
 }
 
 function renderTable () {
+    let dataTable = document.querySelector(".history-data__table");
     let tableBody = document.getElementById("historyTableData"); 
+    dataTable.classList.remove("disabled");
     while(tableBody.firstElementChild) {
         tableBody.firstElementChild.remove();
     }

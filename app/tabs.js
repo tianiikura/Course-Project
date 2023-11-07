@@ -1,4 +1,4 @@
-import { runDateCalculting } from "./datesCalculatingTab.js";
+import { initCalculatingTab } from "./datesCalculatingTab.js";
 import {initHolidayTab} from "./holidayTab.js";
 
 export function initTabs () {
@@ -25,5 +25,5 @@ export function initTabs () {
     calculationDateTabButton.addEventListener("click", switchBetweenTabs);
     holidaysTabButton.addEventListener("click", switchBetweenTabs);
 
-    runDateCalculting();
+    initCalculatingTab();
 };

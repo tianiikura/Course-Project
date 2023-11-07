@@ -77,6 +77,7 @@ export function initHolidayTab () {
             });
             holidaysTable.classList.remove("disabled"); 
         } catch(error) {
+            holidaysTable.classList.add("disabled");
             showAlert("Error! Smth get wrong with request");
         };
     };
