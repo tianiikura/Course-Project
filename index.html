@@ -14,7 +14,7 @@
     </head>
     <body>
         <header class="navigation">
-            <div class="navidation_tab-switch tab1">
+            <div class="navidation_tab-switch tab1 active">
                 <span>Tab 1</span>
             </div>
             <div class="navidation_tab-switch tab2">
@@ -26,19 +26,25 @@
                 <div class="choose-date-period">
                     <form id="chooseDateform">
                         <div class="choose-dates">
-                            <label for="startDate">Enter start date</label>
-                            <div class="start-date">
-                                <input type="date" id="startDate" name="startDate" required>
+                            <div class="choose-dates__item">
+                                <label for="startDate">Enter start date</label>
+                                <div class="start-date">
+                                    <input type="date" id="startDate" name="startDate" required>
+                                </div>
                             </div>
-                            <label for="endDate">Enter end date</label>
-                            <div class="end-date">
-                                <input type="date" id="endDate" name="endDate" disabled required>
+                            <div class="choose-dates__item">
+                                <label for="endDate">Enter end date</label>
+                                <div class="end-date">
+                                    <input type="date" id="endDate" name="endDate" disabled required>
+                                </div>
                             </div>
                         </div>
                         <div class="choose-date-interval">
                             <lable for="datePeriod">Choose date period</lable>
-                            <button type="button" id="weekPeriod">Week</button>
-                            <button type="button" id="monthPeriod">Month</button>
+                            <div class="choose-date-interval__buttons">
+                                <button type="button" id="weekPeriod">Week</button>
+                                <button type="button" id="monthPeriod">Month</button>
+                            </div>    
                         </div>
                         <div class="choose-days-option">
                             <lable for="daysOption">Choose days option</lable>
@@ -49,7 +55,7 @@
                             </select>
                         </div>
                         <div class="choose-period-option">
-                            <lable for="periodOption">Choose period option. Calculate the </lable>
+                            <lable for="periodOption">Choose period option</lable>
                             <select name="periodOption" id="periodOption">
                                 <option value="days">days number</option>
                                 <option value="hours">hours number</option>
@@ -57,7 +63,7 @@
                                 <option value="seconds">seconds number</option>
                             </select>                        
                         </div>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" id="submit-button">
                     </form>
                     <div class="date-actual-result">
                         Result: <span id="actualResult"></span>

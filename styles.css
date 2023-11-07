@@ -91,17 +91,18 @@ body {
     background-color: #BB3D96;
 }
 
-.choose-dates, .choose-date-interval {
+.choose-dates, .choose-dates__item, .choose-date-interval, .choose-days-option, .choose-period-option, .choose-date-interval__buttons {
     display: flex;
     flex-flow: row wrap;
     gap: 20px;
+    align-items: baseline;
 }
 
 .choose-date-period * {
     margin-bottom: 10px;
 }
 
-#startDate, #endDate {
+#startDate, #endDate, #daysOption, #periodOption {
     height: 25px;
     color: #616163;
     border: #616163 solid 1px;
@@ -110,11 +111,11 @@ body {
     box-sizing: border-box;
 }
 
-#startDate:focus, #endDate:focus {
+#startDate:focus, #endDate:focus, #daysOption:focus, #periodOption:focus {
     color: #BB3D96;
 }
 
-#weekPeriod, #monthPeriod {
+#weekPeriod, #monthPeriod, #submit-button {
     height: 35px;
     width: 100px;
     border-radius: 10px;
@@ -124,12 +125,94 @@ body {
     font-size: 16px;
 }
 
-#weekPeriod:hover, #monthPeriod:hover {
+#weekPeriod:hover, #monthPeriod:hover, #submit-button:hover {
     color: #FFFFFF;
     background-color: #BB3D96;
     cursor: pointer;
 }
 
-#weekPeriod:active, #monthPeriod:active {
+#weekPeriod:active, #monthPeriod:active, #submit-button:active {
     transform: translateY(2px);
+}
+
+.date-actual-result {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.history-data__table th {
+    padding-bottom: 10px;
+}
+
+.history-data__table tr {
+    padding-bottom: 5px;
+}
+
+#historyTableData td {
+    padding-inline: 15px;
+}
+
+@media screen and (max-width: 630px) {
+
+    .choose-dates, .choose-date-interval {
+        flex-flow: column wrap;
+    }
+
+    .choose-dates > div {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    body {
+        font-size: 20px;
+    }
+
+    .first-tab, .second-tab {
+       justify-content: center;
+    }
+
+    #chooseDateform {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #submit-button {
+        align-self: center;
+    }
+    .choose-dates > div {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 10px;
+    }
+
+    #startDate, #endDate, #daysOption, #periodOption {
+        height: 45px;
+        width: 300px;
+        border-radius: 15px;
+        padding-inline: 10px;
+        box-sizing: border-box;
+    }
+    
+    #weekPeriod, #monthPeriod, #submit-button {
+        height: 45px;
+        width: 300px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+
+    .history-data__table {
+        font-size: 16px;
+    }
+    .holiday-list_table {
+        font-size: 16px;
+    }
 }
