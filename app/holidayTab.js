@@ -1,7 +1,6 @@
-"use strict";
-import {loadCountries, loadHolidays} from "./calendarificApi.js";
+import {loadCountries, loadHolidays} from "./api.js";
 import {showAlert} from "./alert.js";
-import {sortByProperty} from "./sortByProperty.js";
+import {sortByProperty} from "./utils.js";
 
 const INITIAL_START_YEAR = 2001;
 const INITIAL_END_YEAR = 2050;

@@ -19,11 +19,21 @@ body {
 .navidation_tab-switch {
     font-size: 20px;
     color: #FFFFFF;
+    height: 100%;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navidation_tab-switch:hover{
     cursor: pointer;
-    scale: 125%;
+
 }
+
+.navidation_tab-switch:hover span {
+    scale: 120%;
+}
+
 .navidation_tab-switch:active{
     transform: translateY(4px);
     color: #BB3D96;
@@ -73,6 +83,12 @@ body {
 
 .disabled {
     display: none;
+}
+
+.active {
+    border: #BB3D96 solid 2px;
+    box-sizing: border-box;
+    background-color: #BB3D96;
 }
 
 .choose-dates, .choose-date-interval {

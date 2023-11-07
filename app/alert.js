@@ -1,5 +1,3 @@
-"use strict";
-
 export const showAlert = function (message, timeout = 3000) {
     const alertMessage = document.createElement("div");
     alertMessage.classList.add("alert");

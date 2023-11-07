@@ -1,5 +1,3 @@
-"use strict";
-
 const STORAGE_KEY = "datesHistory";
 const STORAGE_LIMIT = 10;
 

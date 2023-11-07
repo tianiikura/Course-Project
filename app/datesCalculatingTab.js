@@ -1,7 +1,5 @@
-"use strict";
 import {datesHistory, addRecordToStorage} from "./datesHistoryStorage.js";
-import {durationBetweenDates} from "./dateIntervalCalculate.js";
-import { addMonth, addWeek } from "./dateUtils.js";
+import { addMonth, addWeek, durationBetweenDates } from "./dateUtils.js";
 
 export function runDateCalculting () {
     const dateForm = document.getElementById("chooseDateform");
@@ -18,10 +16,7 @@ export function runDateCalculting () {
         endDateInput.disabled = startDateInput.value === "" ? true : false;
         endDateInput.min = startDateInput.value;
     }
-    startDateInput.addEventListener("change", enableEndDateInput);
-    enableEndDateInput();
-    endDateInput.addEventListener("change", () => startDateInput.max = endDateInput.value);
-
+    
     //Прессет періоду тиждень/місяць
     function chooseDatePeriod (event) {
         const dateValue = new Date(startDateInput.value);   
@@ -34,8 +29,6 @@ export function runDateCalculting () {
         endDateInput.valueAsDate = dateValue;
         
     }
-    weekPeriodButton.addEventListener("click", chooseDatePeriod);
-    monthPeriodButton.addEventListener("click", chooseDatePeriod);
 
     const calculateTime = function (event) {
         event.preventDefault();
@@ -58,7 +51,13 @@ export function runDateCalculting () {
         renderTable();
     }
 
+    weekPeriodButton.addEventListener("click", chooseDatePeriod);
+    monthPeriodButton.addEventListener("click", chooseDatePeriod);
+    startDateInput.addEventListener("change", enableEndDateInput);
+    endDateInput.addEventListener("change", () => startDateInput.max = endDateInput.value);
     dateForm.addEventListener("submit", calculateTime);
+    
+    enableEndDateInput();
     renderTable();
 }
 

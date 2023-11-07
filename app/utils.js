@@ -1,5 +1,3 @@
-"use strict";
-
 export function sortByProperty(property, direction) {
     if (direction) {
         return (a, b) => {

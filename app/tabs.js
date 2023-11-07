@@ -1,25 +1,29 @@
-"use strict";
+import { runDateCalculting } from "./datesCalculatingTab.js";
 import {initHolidayTab} from "./holidayTab.js";
 
 export function initTabs () {
-    let tabSwitchButton1 = document.querySelector(".tab1");
-    let tabSwitchButton2 = document.querySelector(".tab2");
-    let firstTab = document.querySelector(".first-tab");
-    let secondTab = document.querySelector(".second-tab");
-    let firstTabClasses = firstTab.classList;
-    let secondTabClasses = secondTab.classList;
+    let calculationDateTabButton = document.querySelector(".tab1");
+    let holidaysTabButton = document.querySelector(".tab2");
+    let calculationDateTab = document.querySelector(".first-tab");
+    let holidaysTab = document.querySelector(".second-tab");
 
     function switchBetweenTabs (event) {
-        if (event.target === tabSwitchButton2) {
-            secondTabClasses.remove("disabled");
-            firstTabClasses.add("disabled");
+        if (event.currentTarget === holidaysTabButton) {
+            holidaysTabButton.classList.add("active");
+            holidaysTab.classList.remove("disabled");
+            calculationDateTab.classList.add("disabled");
+            calculationDateTabButton.classList.remove("active");
             initHolidayTab();
         }
-        else if (event.target === tabSwitchButton1) {
-            firstTabClasses.remove("disabled");
-            secondTabClasses.add("disabled");
+        else if (event.currentTarget === calculationDateTabButton) {
+            calculationDateTabButton.classList.add("active");
+            calculationDateTab.classList.remove("disabled");
+            holidaysTab.classList.add("disabled");
+            holidaysTabButton.classList.remove("active");
         }
     };
-    tabSwitchButton1.addEventListener("click", switchBetweenTabs);
-    tabSwitchButton2.addEventListener("click", switchBetweenTabs);
+    calculationDateTabButton.addEventListener("click", switchBetweenTabs);
+    holidaysTabButton.addEventListener("click", switchBetweenTabs);
+
+    runDateCalculting();
 };
