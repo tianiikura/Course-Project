@@ -102,7 +102,7 @@ body {
     margin-bottom: 10px;
 }
 
-#startDate, #endDate, #daysOption, #periodOption {
+#startDate, #endDate, #daysOption, #periodOption, #countriesList, #yearsList {
     height: 25px;
     color: #616163;
     border: #616163 solid 1px;
@@ -111,7 +111,7 @@ body {
     box-sizing: border-box;
 }
 
-#startDate:focus, #endDate:focus, #daysOption:focus, #periodOption:focus {
+#startDate:focus, #endDate:focus, #daysOption:focus, #periodOption:focus, #countriesList:focus, #yearsList:focus {
     color: #BB3D96;
 }
 
@@ -142,16 +142,23 @@ body {
     align-items: baseline;
 }
 
-.history-data__table th {
+.history-data__table th, .holiday-list_table th {
     padding-bottom: 10px;
 }
 
-.history-data__table tr {
+.history-data__table tr, .holiday-list_table tr {
     padding-bottom: 5px;
 }
 
-#historyTableData td {
+#historyTableData td, .holiday-list_table td {
     padding-inline: 15px;
+}
+
+.holiday-options {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    align-items: baseline;
 }
 
 @media screen and (max-width: 630px) {
@@ -168,7 +175,7 @@ body {
 
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 420px) {
     body {
         font-size: 20px;
     }
@@ -194,7 +201,16 @@ body {
         gap: 10px;
     }
 
-    #startDate, #endDate, #daysOption, #periodOption {
+    .choose-date-interval > * {
+        display: flex;
+        justify-content: center;
+    }
+
+    .choose-date-interval, .choose-days-option, .choose-period-option {
+        justify-content: center;
+    }
+
+    #startDate, #endDate, #daysOption, #periodOption, #countriesList, #yearsList {
         height: 45px;
         width: 300px;
         border-radius: 15px;
@@ -209,10 +225,8 @@ body {
         font-size: 18px;
     }
 
-    .history-data__table {
+    .history-data__table, .holiday-list_table {
         font-size: 16px;
     }
-    .holiday-list_table {
-        font-size: 16px;
-    }
+
 }
